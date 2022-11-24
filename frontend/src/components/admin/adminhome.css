@@ -1,0 +1,47 @@
+.log-out-text{
+    text-align: center;
+    font-size:20px;
+    font-weight:500;
+    margin-top:50px;
+    color:#000;
+}
+
+.log-out{
+    display: flex;
+    justify-content: center;
+}
+
+.admin-name-text{
+    float:right;
+    font-size:20px;
+    font-weight:500;
+    margin-top:50px;
+    color:#000;
+}
+.add-user-link{
+    background-color: #000;
+    color:#fff;
+    font-size:18px;
+    width:100px;
+    border-radius: 4px;
+    padding:6px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.tab-components{
+    background: #000;
+    height: 100vh;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+    background-color: #000 !important;
+}
+
+.nav-link {
+    color: rgba(255,255,255,.55);
+}
+
+.table-content{
+    margin:0 30px;
+}

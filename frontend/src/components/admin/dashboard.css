@@ -1,0 +1,57 @@
+.task-home{
+
+    margin-top:20px;
+    column-gap: 55px;
+    text-align: center;
+}
+
+.user-project1{
+
+    width: 240px;
+    height: 224px;
+    background-color: #CDFCF6;
+    border:7px solid #6dddce;
+    border-radius:25px;
+    
+}
+
+.user-project1 h4{
+    border-bottom: 1px solid #000;
+    text-align: center;
+}
+
+.proj-box{
+    column-gap: 53px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.pending-box{
+    margin-top:30px;
+}
+.sb-avatar {
+    width:unset !important;
+}
+.sb-avatar__image{
+    max-width: 170% !important;
+    width: 163px !important;
+    height: 143px !important;
+}
+
+.project-name-avatar{
+    color:#000;
+    font-weight:500;
+    font-size:16px;
+}
+
+.project-details-table{
+
+    margin-top:20px;
+}
+
+
+.user-avatar{
+
+    margin-top:50px;
+
+}
