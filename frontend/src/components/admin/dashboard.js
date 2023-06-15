@@ -110,7 +110,7 @@ const Dashboard = () => {
             users != undefined ? (
               users.map(users =>
 
-                <div className='col-lg-2 col-xl-2 col-sm-4 col-xs-4'>
+                <div className='col-lg-2 col-xl-2 col-sm-4 col-xs-4' >
                   <Avatar size="100" facebook-id="invalidfacebookusername" src="https://thumbs.dreamstime.com/b/portrait-young-man-beard-hair-style-male-avatar-vector-portrait-young-man-beard-hair-style-male-avatar-105082137.jpg" round={true} onClick={() => {
                     show(users._id)
                   }} />
