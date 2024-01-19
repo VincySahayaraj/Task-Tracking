@@ -1,0 +1,86 @@
+.task-home{
+
+    margin-top:20px;
+    column-gap: 55px;
+    text-align: center;
+    overflow-y: hidden;
+}
+
+.user-project1{
+
+    /* width: 240px;
+    height: 224px; */
+    border: 7px solid #c76586;
+    border-radius: 50%;
+    margin: 0px 36px;
+    cursor: pointer;
+    /* background: linear-gradient(to right,#372c3a,#e14f80); */
+}
+ 
+.user-project1 p{
+    /* border-bottom: 1px solid #000; */
+    text-align: center;
+    margin: 0px;
+    padding: 40px 0px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.proj-box{
+    column-gap: 53px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.pending-box{
+    margin-top:30px;
+}
+.sb-avatar {
+    width:unset !important;
+}
+.sb-avatar__image{
+    max-width: 170% !important;
+    width: 163px !important;
+    height: 143px !important;
+}
+
+.project-name-avatar{
+    color:#000;
+    font-weight:500;
+    font-size:16px;
+}
+
+.project-details-table{
+
+    margin-top:20px;
+}
+
+
+.user-avatar{
+
+    margin-top:50px;
+
+}
+
+.proj-modal{
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    padding:20px;
+    box-shadow:2px 3px 10px #000 ;
+    position: relative;
+}
+
+.project-card{
+    /* display: flex;
+    justify-content: center; */
+    margin-top:10px;
+   
+}
+
+.close-icon{
+    top:1px;
+    right:10px;
+    position: absolute;
+}

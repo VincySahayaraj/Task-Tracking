@@ -1,0 +1,60 @@
+
+.manage-heading{
+    /* background: linear-gradient(to right,#372c3a,#e14f80); */
+}
+
+.manage{
+    margin-top: 25px;
+}
+.search-bar{
+    margin:50px 0px;
+    cursor: pointer;
+}
+[type=search] {
+    outline-offset: -2px;
+    -webkit-appearance: textfield;
+    border-radius: 16px;
+    height: 34px;
+    padding: 15px;
+}
+.close-icon{
+    float: right;
+    cursor: pointer;
+}
+
+
+/* manage task */
+.input-name{
+padding:10px;
+}
+
+.completed-task{
+ 
+    text-decoration: 3px line-through #d11010;
+}
+
+.add-user-link:hover{
+ color:#fff;
+}
+
+.assignee-modal{
+    width:300px;
+    height:auto;
+}
+
+.assign-to{
+    width:100%;
+    border:2px solid #423b3b;
+}
+.status-btn{
+    border-radius: 25px;
+    padding: 4px;
+    border: none;
+    background: #fff;
+}
+.status-btn select{
+    border:none;
+}
+.status-btn select:focus-visible{
+    outline: none;
+}

@@ -1,0 +1,38 @@
+
+.card-section{
+    margin-top:20px;
+    gap:20px;
+}
+.card-dashboard1,.card-dashboard2,.card-dashboard3,.card-dashboard4,.card-dashboard5{
+    padding: 70px 20px;
+    border-radius:25px;
+    cursor: pointer;
+}
+.card-text{
+    background: none;
+    border:none;
+    font-size: 20px;
+    font-weight: 500;
+    color:#fff;
+    text-align: center;
+}
+.card-dashboard1{
+    background-color: #244ad7;
+}
+
+.card-dashboard2{
+    background-color: #5e38b5;
+}
+
+.card-dashboard3{
+    background-color:#9d238e;
+}
+
+.card-dashboard4{
+    background-color: #f5085e;
+}
+
+.card-dashboard5{
+    background-color: #d6118e;
+}
+

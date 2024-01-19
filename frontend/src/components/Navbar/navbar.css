@@ -1,0 +1,44 @@
+.logout-nav{
+    /* color:#fff; */
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    display: block;
+    color:#000
+}
+.navbar-section{
+    /* background: #000; */
+    background: linear-gradient(135deg,#0d51e4,#f80759,#ab1dcf);
+    padding: 20px !important;
+    display: flex;
+    justify-content: space-between !important;
+    position: relative;
+}
+.tasktracking-heading{
+
+    font-size: 30px !important;
+}
+.hide-profile{
+    display: none;
+}
+.avatar-icon{
+    cursor: pointer;
+}
+
+.current-username{
+    font-size: 17px;
+    font-weight: 500;
+    color:#fff;
+    padding-left:20px
+}
+
+.logout-dropdown{
+    position: absolute;
+    right: 4%;
+    top: 85%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 2px 3px 10px #000;
+    padding: 10px;
+
+}
