@@ -7,6 +7,8 @@ import axios from 'axios';
 import { Card,Button,Table } from 'react-bootstrap';
 import { faXmark } from 'react-icons/fa';
 import { IoMdClose } from "react-icons/io";
+import ManageProjects from './ManageProjects.js';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -14,6 +16,8 @@ const Dashboard = () => {
 
   //  const[showproject,setShowproject]=useState();
   var projshow = false;
+
+  const navigate=useNavigate();
 
   const [showproject, setShowproject] = useState(false);
   const [showprojdetails, setShowprojdetails] = useState(false);
@@ -25,12 +29,14 @@ const Dashboard = () => {
   const [projectshow,setProjectshow]=useState();
   const [newTasks,setNewTasks]=useState([]);
   const [pendingTasks,setPendingTasks]=useState([]);
+  const [showManageProjects, setShowManageProjects] = useState(false);
   // const [userdetails,setUserdetails]=useState();
 
   const showUsers = () => {
 
     const updatedValue = !showprojdetails;
     setShowprojdetails(updatedValue);
+    // setShowManageProjects(!showManageProjects);
     // console.log("show user details",showprojdetails);
   }
 
@@ -46,23 +52,11 @@ const Dashboard = () => {
     });
   }
 
-  
   const getProjectsforusers = (id) => {
     axios.get(`http://localhost:8000/users/projects/${id}`).then(res => {
       // alert(id);
-
       if (res.data.success) {
-        // this.setState({
-        //   projects: res.data.projects,
-
-        // });
-
-        console.log("projects of user",res.data)
-        setProjects(res.data.projects)
-        console.log("projects",projects)
-        //this.state.users.sort();
-  
-        // window.processData("mydata");l
+        setProjects(res.data.projects);
       }
     });
   }
@@ -72,43 +66,28 @@ const Dashboard = () => {
   //get All Users
   const getUsers = () => {
     axios.get('http://localhost:8000/users').then(res => {
-
       if (res.data.success) {
-
-
-        // this.setState({
-        //   users: res.data.users,
-
-        // });
         setUsers(res.data.users)
-
-        
-
-        
-       
-        //this.state.users.sort();
-
-
       }
     });
   }
 
   const getProjectsByUser=(id)=>{
     setUserId(id);
-    setProjectshow(!projectshow);
-    // console.log("id",userId,id)
-     getProjectsforusers(id);
+    setProjectshow(true);
+    getProjectsforusers(id);
   }
  
+  const gotoProject=()=>{
+    setShowManageProjects(!showManageProjects);
+  }
 
   //get users 
   useEffect(() => {
     getUsers();
-     getProjects();
- 
-    
+    getProjects();
     getTasks(); 
-    // console.log("showprojdetails", showprojdetails);
+
   }, [])
 
   //get All tasks
@@ -118,7 +97,6 @@ const Dashboard = () => {
      
       if (res.data.success) {
           const currenttasks=res.data.tasks
-          console.log("current tasks",currenttasks)
           const filteredTasks = currenttasks.filter(task => task.status !== 3);
           const openTasks=currenttasks.filter(task=>task.status==0);
           const inprogressTasks=currenttasks.filter(task=>task.status==1);
@@ -134,6 +112,10 @@ const Dashboard = () => {
    
   return (
     <>
+
+
+
+
       <section>
         <div className='row task-home'>
         <div className='col-lg-2 col-xl-2 col-md-2 col-xs-10 col-sm-10 card-dashboard1'>
@@ -142,7 +124,7 @@ const Dashboard = () => {
         </Card>
         </div>
         <div className='col-lg-2 col-xl-2 col-md-2 col-xs-10 col-sm-10 card-dashboard2'>
-        <Card  className='card-text'>
+        <Card  className='card-text' >
         Total Projects<span>{projectcount? projectcount.length:<>0
         </>}</span>
         </Card>
@@ -163,22 +145,6 @@ const Dashboard = () => {
         </>}</span>
         </Card>
         </div>
-
-          {/* {
-            users != undefined ? (
-              users.map(users =>
-                <div className='col-lg-2 col-xl-2 col-sm-4 col-xs-4' >
-                  <Avatar size="100" facebook-id="invalidfacebookusername" src="https://thumbs.dreamstime.com/b/portrait-young-man-beard-hair-style-male-avatar-vector-portrait-young-man-beard-hair-style-male-avatar-105082137.jpg" round={true} onClick={() => {
-                    show(users._id)
-                  }} />
-                  <div className='user-avatar' key={users._id} >
-                    <p className="project-name-avatar">{users.firstname}</p>
-                  </div>
-                </div>
-              )) : (
-              <>No data</>
-            )} */}
-
           {showprojdetails && (
             <div className='row proj-box' >
               {
@@ -197,34 +163,35 @@ const Dashboard = () => {
                 )}
                 </div>
           )}
-
-
           {
             projects && projectshow &&(
               <>
               <div className="project-card">
               <Card  className='proj-modal'>
-                
-                 
                     {/* <p>Projects:<span>{project.projectname}</span></p> */}
                     <table>
                       <th>
- Project Name
+                        Project Name
+                      </th>
+                      <th>
+                        Open 
+                      </th>
+                      <th>
+                        InProgress 
                       </th>
                       {
                          projects.map(project=>
-                        <tr>{project.projectname}</tr>
+                        <tr className='project-name'>{project.projectname}</tr>
                          )}
-                      
                     </table>
-                  
-               
              <IoMdClose className="close-icon" onClick={()=>setProjectshow(!projectshow)}/>
               </Card>
               </div>
               </>
             )
           }
+
+
               {/* <div className='col-2'>
                 <div className='user-project1' onClick={() => setShowprojdetails(!showprojdetails)}>
                   <h4>Koovs</h4>
@@ -281,6 +248,7 @@ const Dashboard = () => {
         <div>
         </div>
       </section>
+      {showManageProjects && <ManageProjects projects={showManageProjects} />}
     </>
   )
 }

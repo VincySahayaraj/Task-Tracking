@@ -84,3 +84,11 @@
     right:10px;
     position: absolute;
 }
+
+.project-name{
+    text-align: justify;
+}
+
+.proj-model table th{
+    padding: 10px;
+}

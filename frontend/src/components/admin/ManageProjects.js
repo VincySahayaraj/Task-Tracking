@@ -44,6 +44,7 @@ const ViewProject = () => {
   useEffect(() => {
     getProjects();
     getUsers();
+   
   }, [])
 
 
