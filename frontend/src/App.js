@@ -31,6 +31,8 @@ function App() {
 
   const [user, setLoginUser] = useState(token)
 
+  console.log("test");
+
   useEffect(() => {
     // // check user here
     // localStorage.getItem
